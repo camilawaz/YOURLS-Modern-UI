@@ -1,0 +1,117 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    background: white;
+    font-size: $font-size;
+}
+header,
+nav {
+    height: $basic-height;
+    border-bottom: 1px solid $border-color;
+    display: inline-flex;
+}
+header {
+    align-items: center;
+    width: 40%;
+    h1,
+    a {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        font-size: $font-size;
+        font-weight: normal;
+        padding: 0 $space;
+        span:not(:first-child) {
+            margin-left: $space/2;
+        }
+        img {
+            order: -1;
+            height: $basic-height - 10;
+            width: auto;
+            margin-right: $space;
+        }
+    }
+
+}
+
+nav {
+    width: 60%;
+    float: right;
+
+    ul,
+    li,
+    li a {
+        display: flex;
+        align-items: center;
+    }
+
+    ul#admin_menu {
+        width: 100%;
+        justify-content: flex-end;
+        margin: 0;
+        min-height: auto;
+        font-size: $font-size;
+        li {
+            height: 100%;
+            &:first-child {
+                border-left: 1px solid $border-color;
+                order: 10;
+                color: $gray-medium;
+                padding: 0 $space;
+                font-size: $font-size-sm;
+                strong {
+                    margin: 0 $space/4;
+                    // color: $secondary;
+                }
+                a {
+                    padding: 0;
+                }
+            }
+            a {
+                height: 100%;
+                padding: 0 $space+5;
+                color: $secondary;
+                transition: all .3s ease-in-out;
+                &:hover {
+                    text-decoration: none;
+                    color: $primary;
+                }
+                &:not([title="Logout"]) {
+                    &:hover {
+                        background: rgba($border-color, .5);
+
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+#wrap {
+    max-width: 100%;
+    font-size: $font-size;
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    min-height: calc(100vh - #{$basic-height});
+}
+
+#footer {
+    border-top: 1px solid $border-color;
+    height: $basic-height;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    p {
+        text-align: left;
+        border: 0;
+        border-radius: 0;
+    }
+}
